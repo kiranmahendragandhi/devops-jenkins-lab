@@ -32,7 +32,9 @@ sh 'cat /tmp/deployed_app.txt'
 }
 }
 post {
-success { echo 'Pipeline completed successfully!' }
-failure { echo 'Pipeline FAILED. Check logs abive.' }
-}
+        // LINE 2: Automatically deletes files to save EC2 disk space
+        always { cleanWs() }
+        success { echo 'Pipeline successful!' }
+        failure { echo 'Pipeline FAILED.' }
+    }
 }
