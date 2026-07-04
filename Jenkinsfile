@@ -5,7 +5,7 @@ APP_NAME = 'devops-app'
 VERSION = "2.0.${BUILD_NUMBER}"
 }
 stages {
-stage('Checkout') {steps {Checkout SCM}}
+stage('Checkout') {steps {Checkout scm}
 stage('Build') {
 steps {
 sh 'echo Building version ${VERSION}'
