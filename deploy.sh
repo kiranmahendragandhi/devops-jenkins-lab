@@ -23,5 +23,5 @@ sudo systemctl restart httpd || sudo systemctl restart apache2
 echo "[DEPLOY] Deployment v$VERSION complete!"
 
 # Fix typo: latest; Fix syntax: $(command substitution)
-IP=$(curl -s http://169.254.169)
+IP=$(curl -s --connect-timeout 5 http://169.254.169 || echo "localhost")
 echo "[DEPLOY] App running at http://$IP"
