@@ -1,0 +1,9 @@
+mkdir -p webapp && cat > webapp/index.html << 'EOF'
+<!DOCTYPE html><html>
+<head><title>Devops App</title></head>
+<body>
+ <h1>Devops CI/CD Pipeline - LIVE!</h1>
+ <p>Version: BUILD_VERSION_PLACEHOLDER</p>
+ <p>Deployed: DEPLOY_TIME_PLACEHOLDER</p>
+</body></html>
+EOF
